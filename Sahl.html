@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Self-Taught Programmer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .book-cover {
+            width: 85%;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan shadow */
+            border-radius: 10px; /* Membuat tepi melengkung */
+            overflow: hidden; /* Menghindari elemen dalamnya menonjol keluar saat tepinya melengkung */
+            
+        }
+
+        /* Updated Button Styling */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 220px;
+        }
+        .btn {
+            display: flex;
+            justify-content: center; /* Changed to center */
+            align-items: center;
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center; /* Changed to center */
+            transition: background-color 0.3s ease;
+            position: relative; /* Added for positioning the arrow */
+
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #333;
+            border: 2px solid #4CAF50;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn:after {
+            content: "\25BC";
+            font-size: 12px;
+            position: absolute; /* Position the arrow absolutely */
+            right: 15px; /* Place the arrow on the right */
+        }
+        .book-info {
+            flex: 1;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .author {
+            font-style: italic;
+        }
+        .description {
+            margin-bottom: 20px;
+        }
+        .sections {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sections li {
+            margin-bottom: 10px;
+        }
+        .book-details {
+            margin-top: 20px;
+        }
+        .genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .genre {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .this-edition {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .author-info {
+            display: flex;
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .author-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .author-details {
+            flex: 1;
+        }
+        .related-books {
+            margin-top: 20px;
+        }
+        .related-books h3 {
+            margin-bottom: 10px;
+        }
+        .book-list {
+            display: flex;
+            gap: 20px;
+        }
+        .book-list img {
+            width: 100px;
+        }
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #c14a3a; /* Assuming this is the bookcircle-red color */
+            color: white;
+            padding: 16px;
+        }
+
+        .header-content {
+            margin: 0 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        /* Navigation styles */
+        .nav {
+            margin-left: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+        }
+
+        .nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 5px; /* Reduced gap between navigation items */
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .nav a:hover {
+            color: #d1d5db; /* Approximation of hover:text-gray-300 */
+        }
+
+        .nav .highlight {
+            color: #fde047; /* Approximation of text-yellow-300 */
+        }
+
+        /* Spacer */
+        .spacer {
+            flex-grow: 1;
+        }
+
+        /* Search bar styles */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            margin-left: 200px;
+        }
+
+        .search-bar {
+            width: 250px;
+            height: 40px;
+            background-color: #c14a3a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .search-bar input {
+            color: white;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* User profile and hamburger button styles */
+        .user-controls {
+            display: flex;
+            align-items: center;
+            margin: 0 24px;
+        }
+
+        .user-controls > *:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        .user-profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .hamburger-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .hamburger-button:focus {
+            outline: none;
+        }
+        :root {
+        --bookcircle-red: #8B3A3A;
+        --bookcircle-beige: #F5E6D3;
+        }
+
+        /* Penggunaan warna dalam elemen */
+        .element-red {
+        background-color: var(--bookcircle-red);
+        color: var(--bookcircle-beige);
+        }
+
+        .element-beige {
+        background-color: var(--bookcircle-beige);
+        color: var(--bookcircle-red);
+        }
+    </style>
+</head>
+<body>
+    <header class="header element-red">
+        <div class="header-content">
+            <!-- Logo (Pojok Kiri) -->
+            <div class="logo">
+                <a href="homepage.html">
+                <img src="../src/Logo.png" alt="Logo"> </a>
+            </div>
+    
+            <!-- Navigation Menu -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussion</a></li>
+                    <li><a href="#" class="highlight">Find a Book ▼</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Spacer to push remaining items to the right -->
+            <div class="spacer"></div>
+    
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="search">
+                </div>
+            </div>
+            
+            <!-- User Profile and Hamburger Button -->
+            <div class="user-controls">
+                <img src="../src/profil.jpg" alt="User profile" class="user-profile">
+                <button id="hamburger-button" class="hamburger-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+    <main>
+        <div class="book-cover-container">
+            <img src="../src/The Self-Taught Programmer.jpg" alt="The Self-Taught Programmer book cover" class="book-cover">
+            <div class="button-container">
+                <button class="btn btn-primary">Want to read</button>
+                <button class="btn btn-secondary">Borrow</button>
+            </div>
+        </div>
+        <div class="book-info">
+            <h1>The Self-Taught Programmer: The Definitive Guide to Programming Professionally</h1>
+            <p class="author">Cory Althoff</p>
+            <p class="description">I am a self-taught programmer. After a year of self-study, I learned to program well enough to land a job as a software engineer II at eBay. Once I got there, I realized I was severely under-prepared. I was overwhelmed by the amount of things I needed to know but hadn't learned yet. My journey learning to program, and my experience at my first job as a software engineer were the inspiration for this book.</p>
+            <p>This book is not just about learning to program; although you will learn to code. If you want to program professionally, it is not enough to learn to code; that is why, in addition to helping you learn to program, I also cover the rest of the things you need to know to program professionally that classes and books don't teach you. "The Self-taught Programmer" is a roadmap, a guide to take you from writing your first Python program, to passing your first technical interview. I divided this book into five sections:</p>
+            <ol class="sections">
+                <li>1. Start to program in Python 3 and build your first program.</li>
+                <li>2. Learn Object-oriented programming and create a powerful Python program to get you hooked.</li>
+                <li>3. Learn to use tools like Git, Bash, and regular expressions. Then use your new coding skills to build a web scraper.</li>
+                <li>4. Study Computer Science fundamentals like data structures and algorithms.</li>
+                <li>5. Finish with tips for working with a team and landing a programming job.</li>
+            </ol>
+            <div class="book-details">
+                <h3>Genres</h3>
+                <div class="genres">
+                    <span class="genre">Programming</span>
+                    <span class="genre">Computer Science</span>
+                    <span class="genre">Technology</span>
+                    <span class="genre">Nonfiction</span>
+                    <span class="genre">Coding</span>
+                    <span class="genre">Technical</span>
+                    <span class="genre">Software</span>
+                    <span class="genre">Computers</span>
+                    <span class="genre">Science</span>
+                    <span class="genre">Reference</span>
+                </div>
+                <p>299 pages, Kindle Edition</p>
+                <p>First published January 24, 2017</p>
+            </div>
+            <div class="this-edition">
+                <h2>This edition</h2>
+                <p>Format: 299 pages, Kindle Edition</p>
+                <p>Published: February 1, 2020 by Triangle Connection LLC</p>
+                <p>ASIN: B01M01YDQA</p>
+                <p>Language: English</p>
+            </div>
+            <div class="author-info">
+                <img src="../src/author.jpg" alt="Cory Althoff" class="author-image">
+                <div class="author-details">
+                    <h3>Cory Althoff</h3>
+                    <p>2 books · 59 followers</p>
+                    <p>Cory Althoff adalah seorang penulis, developer, dan instruktur yang dikenal karena bukunya The Self-Taught Programmer: The Definitive Guide to Programming Professionally. Ia memulai karirnya sebagai seorang yang belajar pemrograman secara otodidak, tanpa latar belakang formal di bidang ilmu komputer. Pengalamannya dalam belajar pemrograman secara mandiri menginspirasi Cory untuk menulis buku panduan bagi orang-orang yang ingin menjadi programmer, meskipun tidak memiliki pendidikan formal dalam bidang tersebut.</p>
+                </div>
+            </div>
+            <div class="related-books">
+                <h3>Readers also enjoyed</h3>
+                <div class="book-list">
+                    <div>
+                        <img src="../src/pragmaticprogramer.jpg" alt="The Pragmatic Programmer">
+                        <p>The Pragmatic Programmer: From Journeyman to Master</p>
+                        <p>Andy Hunt</p>
+                    </div>
+                    <div>
+                        <img src="../src/cleancode.jpg" alt="Clean Code">
+                        <p>Clean Code: A Handbook of Agile Software Craftsmanship</p>
+                        <p>Robert C. Martin</p>
+                    </div>
+                    <div>
+                        <img src="../src/programer guide.jpg" alt="A Programmer's">
+                        <p>A Programmer's Guide to Computer Science</p>
+                        <p>William  M. Springer ll</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer style="background-color: #f9fafb; padding: 40px 0; color: #4b5563;">
+        <div style="width: 90%; margin: 0 auto; max-width: 1200px; display: grid; grid-template-columns: 1fr; gap: 40px;">
+            <!-- Company Section -->
+            <div>
+                <h5 style="font-weight: bold; margin-bottom: 12px;">COMPANY</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">About us</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Careers</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Terms</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Privacy</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Interest Based Ads</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Ad Preferences</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Help</a></li>
+                </ul>
+            </div>
+    
+            <!-- Work With Us Section -->
+            <div>
+                <h5 style="font-weight: bold; margin-bottom: 12px;">WORK WITH US</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Authors</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Advertise</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Authors & Ads Blog</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">API</a></li>
+                </ul>
+            </div>
+    
+            <!-- Connect Section -->
+            <div>
+                <h5 style="font-weight: bold; margin-bottom: 12px;">CONNECT</h5>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#"><img src="https://s.gr-assets.com/assets/site_footer/footer_facebook-ea4ab848f8e86c5f5c98311bc9495a1b.svg" style="width: 30px; height: auto;"></a>
+                    <a href="#"><img src="https://s.gr-assets.com/assets/site_footer/footer_twitter-126b3ee80481a763f7fccb06ca03053c.svg" style="width: 30px; height: auto;"></a>
+                    <a href="#"><img src="https://s.gr-assets.com/assets/site_footer/footer_instagram-d59e3887020f12bcdb12e6c539579d85.svg" style="width: 30px; height: auto;"></a>
+                    <a href="#"><img src="https://s.gr-assets.com/assets/site_footer/footer_linkedin-5b820f4703eff965672594ef4d10e33c.svg" style="width: 30px; height: auto;"></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Section -->
+        <div style="width: 90%; margin: 0 auto; max-width: 1200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; margin-top: 40px; color: #6b7280;">
+            <div style="display: flex; gap: 15px;">
+                <a href="#"><img src="../src/app-store-logo.png" alt="App Store" style="width: 100px; height: auto;"></a>
+                <a href="#"><img src="../src/play-store-logo.png" alt="Google Play" style="width: 100px; height: auto;"></a>
+            </div>
+            <div style="margin-top: 15px;">&copy; 2024 BookCircle.com, Inc.</div>
+            <div style="margin-top: 15px;"><a href="#" style="text-decoration: none; color: #4b5563; transition: color 0.3s;">Mobile version</a></div>
+        </div>
+    </footer>
+    
+</body>
+</html>

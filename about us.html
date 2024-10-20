@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Tailwind</title>
+  <link href="./output.css" rel="stylesheet">
+ 
+
+</head>
+<body class="bg-white">
+  <header class="bg-bookcircle-red text-white p-4">
+    <div class=" mx-2 flex items-center">
+      <!-- Logo (Pojok Kiri) -->
+      <div class="flex items-center ml-0">
+        <img src="../src/Logo.png" alt="Logo" class="h-8 w-auto">
+      </div>
+  
+      <!-- Navigation Menu -->
+      <nav class="hidden md:block ml-6">
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Blog</a></li>
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Discussion</a></li>
+          <li><a href="Raki.html" class="hover:text-gray-300 text-yellow-300" style="font-family: 'Georgia', serif;">Find a Book ▼</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Spacer to push remaining items to the right -->
+      <div class="flex-grow"></div>
+  
+      <!-- Search Bar -->
+      <div class="flex items-center mr-4">
+        <div class="w-72 h-10 bg-[#c14a3a] rounded-lg flex items-center justify-between px-4">
+          <input type="text" placeholder="search" class="text-white bg-transparent border-none outline-none w-full h-full placeholder-opacity-60 text-sm" style="font-family: sans-serif">
+        </div>
+      </div>
+      
+      <!-- User Profile and Hamburger Button -->
+      <div class="flex items-center space-x-4 mx-6">
+        <a href="profil.html">
+          <img src="../src/profil.jpg" alt="User profile" class="w-10 h-10 rounded-full">
+        </a>
+        <button id="hamburger-button" class="text-white focus:outline-none ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mt-0">
+    <!-- About Us Section -->
+    <section class="container mx-auto mt-8 p-8 bg-amber-50 rounded-lg">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-6" style="font-family: 'Playfair Display', serif;">About BookCircle</h1>
+        <p class="text-gray-600 text-lg mb-6">At BookCircle, we're passionate about bringing book lovers together. Our platform provides a space where readers can discover, discuss, and share their favorite reads. Whether you're diving into a new genre or finding hidden literary gems, BookCircle offers a welcoming community for everyone who loves books as much as we do.</p>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mt-8">
+        <!-- Mission Block -->
+        <div>
+          <h3 class="font-semibold text-xl mb-4">Our Mission</h3>
+          <p class="text-gray-600">Our mission is to foster a vibrant community of book enthusiasts who can share knowledge, experiences, and recommendations. We believe that books have the power to change lives, and our goal is to make that connection happen—one story at a time.</p>
+        </div>
+  
+        <!-- Vision Block -->
+        <div>
+          <h3 class="font-semibold text-xl mb-4">Our Vision</h3>
+          <p class="text-gray-600">We envision a world where readers of all ages and backgrounds can easily connect and find new literary adventures. From classics to contemporary works, our platform helps you explore and engage with books that can inspire, entertain, and enlighten.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Community Impact Section -->
+    <section class="my-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-3xl font-semibold text-center mb-6">Why Join BookCircle?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <img src="../src/Discover 3.png" alt="Discover Books" class="w-36 h-36 mx-auto mb-4">
+          <h3 class="font-semibold mb-2">Discover New Books</h3>
+          <p class="text-sm text-gray-600">Explore a diverse selection of books, recommended by fellow readers. Whether you love fiction, non-fiction, or anything in between, you're sure to find something that captivates you.</p>
+        </div>
+        <div>
+          <img src="../src/Discover 1.png" alt="Share Reviews" class="w-36 h-36 mx-auto mb-4">
+          <h3 class="font-semibold mb-2">Share Your Insights</h3>
+          <p class="text-sm text-gray-600">Have a book you couldn't put down? Share your thoughts with the community! Join discussions, write reviews, and connect with readers who share your literary passions.</p>
+        </div>
+        <div>
+          <img src="../src/discover 2.png" alt="Join Discussions" class="w-36 h-36 mx-auto mb-4">
+          <h3 class="font-semibold mb-2">Join the Conversation</h3>
+          <p class="text-sm text-gray-600">Engage in meaningful discussions about literature with fellow book lovers. Whether you're debating plot twists or discovering new interpretations, there's always something to talk about.</p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="bg-gray-50 py-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-600">
+      <!-- Company Section -->
+      <div>
+        <h5 class="font-bold mb-3">COMPANY</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">About us</a></li>
+          <li><a href="#" class="hover:text-gray-800">Careers</a></li>
+          <li><a href="#" class="hover:text-gray-800">Terms</a></li>
+          <li><a href="#" class="hover:text-gray-800">Privacy</a></li>
+          <li><a href="#" class="hover:text-gray-800">Interest Based Ads</a></li>
+          <li><a href="#" class="hover:text-gray-800">Ad Preferences</a></li>
+          <li><a href="#" class="hover:text-gray-800">Help</a></li>
+        </ul>
+      </div>
+  
+      <!-- Work With Us Section -->
+      <div>
+        <h5 class="font-bold mb-3">WORK WITH US</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">Authors</a></li>
+          <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
+          <li><a href="#" class="hover:text-gray-800">Authors & Ads Blog</a></li>
+          <li><a href="#" class="hover:text-gray-800">API</a></li>
+        </ul>
+      </div>
+  
+      <!-- Connect Section -->
+      <div>
+        <h5 class="font-bold mb-3">CONNECT</h5>
+        <div class="flex space-x-3">
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_facebook-ea4ab848f8e86c5f5c98311bc9495a1b.svg">
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_twitter-126b3ee80481a763f7fccb06ca03053c.svg"/>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_instagram-d59e3887020f12bcdb12e6c539579d85.svg"/>          
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_linkedin-5b820f4703eff965672594ef4d10e33c.svg"/>          
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom Section -->
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 mt-6">
+      <div class="flex space-x-4">
+        <a href="#"><img src="../src/app-store-logo.png" alt="App Store" class="w-24 h-8"></a>
+        <a href="#"><img src="../src/play-store-logo.png" alt="Google Play" class="w-24 h-8"></a>
+      </div>
+      <div class="mt-4 md:mt-0">&copy; 2024 BookCirle.com, Inc.</div>
+      <div class="mt-4 md:mt-0">
+        <a href="#" class="hover:text-gray-800">Mobile version</a>
+      </div>
+    </div>
+  </footer>
+  
+
+</main>
+</body>
+</html>

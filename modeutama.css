@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('latar belakang buku.WEBP'); /* Gif yang dipilih*/
+    background-size: cover;       /* Mengatur agar gambar menutupi seluruh layar */
+    background-position: bottom;  /* Fokus pada bagian bawah gambar */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    background-attachment: fixed; /* Gambar tetap saat menggulir halaman */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Menyesuaikan dengan tinggi layar penuh */
+}
+
+
+
+header {
+    background-color: #b11f1f;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1, h2 { /* Mengatur ukuran judul */
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    font-size: 12px;    /* Mengubah ukuran font menjadi lebih kecil */
+}
+
+.menu-item {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.menu-item.active {
+    font-weight: bold;   /* Untuk menandai menu aktif */
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-left: auto;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Search Bar Styles */
+.search-form {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    border-radius: 200px;
+    border: none;
+    font-size: 16px;
+    width: 200px;
+    background-color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Memusatkan tombol dan teks secara horizontal */
+    justify-content: center;     /* Memusatkan secara vertikal */
+    height: calc(100vh - 60px);  /* Memusatkan ke tengah dengan menyesuaikan header */
+    text-align: center;          /* Memusatkan teks */
+}
+
+/* Sign In Button Styles */
+.sign-in-btn {
+    background: linear-gradient(to right,  #982B1C, #F2E8C6); /* Gradient Background */
+    border: none;
+    color: white;
+    padding: 15px 115px;    /* mengkontrol ukuran tombol*/
+    font-size: 20px;
+    border-radius: 30px;    /* Rounded corners */
+    cursor: pointer;
+    margin: 10px 5px ;
+    text-decoration: none;
+    display: inline-block;  /* Keeps the button inline */
+    position: relative;
+    bottom: 70px;
+    
+}
+
+/* Sign Up Button Styles */
+.sign-up-btn {
+    background: linear-gradient(to right, #982B1C, #F2E8C6);
+    border: none;
+    color: white;
+    padding: 15px 115px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    bottom: 46px;
+    
+}
+
+
+
+/* Don't Have an Account Text */
+.dont-have-account {
+    color:white;
+    font-size: 14px;
+    margin: 10px 0px;
+    position: relative;
+    bottom : 140px;
+    margin-left: 0px;
+    margin-right:110px;
+    
+}
+
+/* Custom Buttons */
+.sign-in-btn-signin {
+    background: linear-gradient(to right, #982B1C, #F2E8C6);
+    border: none;
+    color: white;
+    padding: 10px 1px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 5px;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+}
+
+.sign-up-btn-signup {
+    background: linear-gradient(to right, #982B1C, #F2E8C6);
+    border: none;
+    color: white;
+    padding: 15px 115px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 5px;
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+}
+
+/* Back menu Button Styles */
+.back-menu {
+    background: linear-gradient(to right, #800000, #F2E8C6);
+    border: none;
+    color: white;
+    padding: 15px 70px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+
+
+/* Untuk halaman Blog */
+body.blog-page {
+    background-image: none;  /* Menghilangkan gambar latar belakang */
+    background-color: white; /* Bisa diganti dengan warna lain */
+}
+
+/* Untuk halaman Find a Book */
+body.find-book-page {
+    background-image: none;
+    background-color: white;
+}
+
+/* Untuk halaman Discussion */
+body.discussion-page {
+    background-image: none;
+    background-color: white;
+}
+
+/* === Kode Baru untuk Highlight Menu Aktif === */
+.nav-menu .menu-item.active {
+    font-weight: bold;           /* Membuat menu halaman yang sedang dibuka lebih tebal */
+    text-decoration: underline;  /* Menambahkan garis bawah untuk halaman aktif */
+}
+
+
+/* Nama: Gaya untuk logo */
+.logo-image {
+    width: 250px;        /* Sesuaikan dengan lebar yang diinginkan */
+    height: auto;        /* Agar proporsi gambar tetap terjaga */
+    margin-right: 10px;  /* Tambahkan spasi di sebelah kanan jika perlu */
+    
+}
+
+.logo-image-sign {
+    width: 250px;                /* Atur lebar logo sesuai kebutuhan */
+    height: auto;                /* Mempertahankan proporsi */
+    position: absolute;          /* Mengatur posisi */
+    top: 12px;                   /* Jarak dari atas */
+    left: 145px;                 /* Posisikan logo di tengah horizontal */
+    transform: translateX(-50%); /* Memusatkan logo */
+    margin-right: 10px;
+}
+
+.welcome-back {
+    font-family: 'Georgia'; /* memilih font */
+    font-size: 32px;        /* Ukuran teks */
+    color: #DAD4B5;         /* Warna teks */
+    text-align: center;     /* Posisi teks rata tengah */
+    margin-bottom: 20px;    /* Jarak bawah */
+}
+
+.Create-Account {
+    font-family: 'Georgia'; /* memilih font */
+    font-size: 32px;        /* Ukuran teks */
+    color: #DAD4B5;         /* Warna teks */
+    text-align: center;     /* Posisi teks rata tengah */
+    margin-bottom: 20px;   
+}
+
+.birthdate-select {
+    font-family: 'Georgia'; /* memilih font */
+    font-size: 30px;        /* Ukuran teks */
+    color: #DAD4B5;         /* Warna teks */
+    text-align: center;     /* Posisi teks rata tengah */
+    margin-bottom: 20px; 
+}
+
+.login-success {
+    font-family: 'Georgia'; /* memilih font */
+    font-size: 40px;        /* Ukuran teks */
+    color: #DAD4B5;         /* Warna teks */
+    text-align: center;     /* Posisi teks rata tengah */
+    margin-bottom: 200px;  
+}
+
+.profile-circle-after {
+    width: 40px; /* mengatur kelebaran lingkaran / ukuran foto*/
+    height: 40px;/* mengatur panjang lingkaran/ ukuran foto*/
+    border-radius: 50%; /* memberi frame berbentuk lingkaran yang akan berisi foto profil.jpg */
+    background-image: url('foto profil.jpg');
+    background-color: #DAD4B5;
+    background-size: cover; /* Agar gambar menutupi seluruh lingkaran */
+    background-position: center; /* Mengatur posisi gambar di tengah secara default */
+     background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+   
+}
+
+:root {
+    --bookcircle-red: #8B3A3A;
+    --bookcircle-beige: #F5E6D3;
+    }
+
+    /* Penggunaan warna dalam elemen */
+.element-red {
+    background-color: var(--bookcircle-red);
+    color: var(--bookcircle-beige);
+    }
+
+.element-beige {
+    background-color: var(--bookcircle-beige);
+    color: var(--bookcircle-red);
+    }
+
+/* Header */
+.header {
+    background-color: #c14a3a; /* bookcircle-red */
+    color: white;
+    padding: 16px;
+  }
+  
+  /* Header container */
+  .header-container {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+  }
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+  
+  .logo-img {
+    height: 32px;
+    width: auto;
+  }
+  
+  /* Navigation */
+  .navigation {
+    display: none;
+    margin-left: 24px;
+  }
+  
+  @media (min-width: 768px) {
+    .navigation {
+      display: block;
+    }
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: 25px; /* Reduced gap between navigation items */
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+  }
+  
+  .nav-link:hover {
+    color: #b3b3b3; /* Gray hover color */
+  }
+  
+  .nav-link.active {
+    color: #ffd700; /* Yellow */
+  }
+  
+  /* Spacer */
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  /* Search bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+  }
+  
+  .search-bar {
+    width: 288px;
+    height: 40px;
+    background-color: #c14a3a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  .search-input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    opacity: 0.6;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  
+  /* User profile */
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 24px;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .hamburger-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .hamburger-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+:root {
+    --bookcircle-red: #8B3A3A;
+    --bookcircle-beige: #F5E6D3;
+    }
+
+    /* Penggunaan warna dalam elemen */
+.element-red {
+    background-color: var(--bookcircle-red);
+    color: var(--bookcircle-beige);
+    }  

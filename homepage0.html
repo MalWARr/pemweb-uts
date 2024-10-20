@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookCircle</title>
+  <link href="./output.css" rel="stylesheet">
+ 
+
+</head>
+<body class="bg-white">
+  <header class="bg-bookcircle-red text-white p-4">
+    <div class=" mx-2 flex items-center">
+      <!-- Logo (Pojok Kiri) -->
+      <div class="flex items-center ml-0">
+        <img src="../src/Logo.png" alt="Logo" class="h-8 w-auto">
+      </div>
+  
+      <!-- Navigation Menu -->
+      <nav class="hidden md:block ml-6">
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Blog</a></li>
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Discussion</a></li>
+          <li><a href="#" class="hover:text-gray-300 text-yellow-300" style="font-family: 'Georgia', serif;">Find a Book ▼</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Spacer to push remaining items to the right -->
+      <div class="flex-grow"></div>
+  
+      <!-- Search Bar -->
+      <div class="flex items-center mr-4">
+        <div class="w-72 h-10 bg-[#c14a3a] rounded-lg flex items-center justify-between px-4">
+          <input type="text" placeholder="search" class="text-white bg-transparent border-none outline-none w-full h-full placeholder-opacity-60 text-sm" style="font-family: sans-serif">
+        </div>
+      </div>
+      
+      <!-- User Profile and Hamburger Button -->
+      <div class="flex items-center space-x-4 mx-6">
+        <a href="Modeutama.html">
+        <img src="../src/profil icon.jpg" alt="User profile" class="w-10 h-10 rounded-full" a r>
+      </a>
+        <button id="hamburger-button" class="text-white focus:outline-none ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+<main class="mt-0">
+    <div class="relative h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="bg-bookcircle-beige text-black text-center p-8 rounded-sm">
+                <h2 class="text-5xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">Community</h2>
+                <p class="text-2xl">you can feel good about.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mx-auto mt-8">
+        <h3 class="text-xl font-semibold mb-4 underline decoration-bookcircle-red"><a href="#">What's Trending Now ›</a></h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/stranger.jpg" alt="The Stranger">
+            <div class="p-4">
+              <span class="bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+              <h2 class="text-l font-bold mt-3">The Stranger</h2>
+              <p class="text-gray-600 text-sm mt-1">Albert Camus</p>
+          </div>
+          </div>
+        
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/hp.jpg" alt="Harry Potter">
+            <div class="p-4">
+              <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+              <h2 class="text-l font-bold mt-3">Harry Potter and the Sorcerer's Stone</h2>
+              <p class="text-gray-600 text-sm mt-1">J.K. Rowling</p>
+          </div>
+          </div>
+          
+
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/money.jpg" alt="The Psychology of Money">
+            <div class="p-4">
+              <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+              <h2 class="text-l font-bold mt-3">The Psychology of Money</h2>
+              <p class="text-gray-600 text-sm mt-1">Morgan Housel</p>
+          </div>
+          </div>
+          
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/babylon.jpg" alt="The Richest Man in Babylon">
+            <div class="p-4">
+              <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+              <h2 class="text-l font-bold mt-3">The Richest Man in Babylon</h2>
+              <p class="text-gray-600 text-sm mt-1">George S. Clason</p>
+          </div>
+          </div>
+          
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/Alchemist.jpg" alt="The Alchemist">
+            <div class="p-4">
+              <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+              <h2 class="text-l font-bold mt-3">The Alchemist</h2>
+              <p class="text-gray-600 text-sm mt-1">Paulo Coelho</p>
+          </div>
+          </div>
+            
+          <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+            <img class="w-full h-48 object-cover" src="../src/rbc.jpg" alt="Remarkably Bright Creatures">
+            <div class="p-4">
+              <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded-full">Fiction</span>
+              <h2 class="text-l font-bold mt-3">Remarkably Bright Creatures</h2>
+              <p class="text-gray-600 text-sm mt-1">Shelby Van Pelt</p>
+          </div>
+          </div>
+    </section>
+
+    <section class="my-12 bg-amber-50 p-12 rounded-lg">
+      <div class="grid grid-cols-3 gap-8">
+          <div class="text-center">
+              <img src="../src/Discover 3.png" alt="Discover" class="w-48 h-48 mx-auto mb-4">
+              <h3 class="font-semibold mb-2">Discover, Discuss, and Exchange Books in One Place</h3>
+              <p class="text-sm text-gray-600">Join a vibrant community of book lovers! Whether you're here to chat about your favorite stories, explore new genres, or find hidden gems in our secondhand bookstore, BookCircle has something for everyone.</p>
+          </div>
+          <!-- Add more feature blocks here -->
+           <div class="text-center">
+              <img src="../src/Discover 1.png" alt="Discover" class="w-48 h-48 mx-auto mb-4">
+              <h3 class="font-semibold mb-2">Share Your Thoughts</h3><br>
+              <p class="text-sm text-gray-600">Love a book? Share your review! Start or join discussions, and connect with others who share your passion for stories and ideas.</p>
+          </div>
+          <div class="text-center">
+              <img src="../src/discover 2.png" alt="Discover" class="w-48 h-48 mx-auto mb-4">
+              <h3 class="font-semibold mb-2">Explore New Stories</h3><br>
+              <p class="text-sm text-gray-600">Browse thousands of books and discover your next favorite read. From classic literature to the latest bestsellers, you'll find recommendations from fellow readers just like you.</p>
+          </div>
+      </div>
+  </section>
+    
+  <section class="container mx-auto mt-8">
+    <h3 class="text-xl font-semibold mb-4 underline decoration-bookcircle-red"><a href="#">Recommendations for You ›</a></h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/The Self-Taught Programmer.jpg" alt="The Stranger">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">The Self-Taught Programmer</h2>
+          <p class="text-gray-600 text-sm mt-1">Cory Althoff</p>
+      </div>
+      </div>
+    
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/Introduction to Algorithms.jpg" alt="Harry Potter">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">Introduction to Algorithms</h2>
+          <p class="text-gray-600 text-sm mt-1">Thomas H. Cormen</p>
+      </div>
+      </div>
+      
+
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/Structure and Interpretation of Computer Programs.jpg" alt="The Psychology of Money">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">Structure and Interpretation of Computer Programs</h2>
+          <p class="text-gray-600 text-sm mt-1">Harold Abelson</p>
+      </div>
+      </div>
+      
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/AI.jpg" alt="The Richest Man in Babylon">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">Artificial Intelligence: A Modern Approach</h2>
+          <p class="text-gray-600 text-sm mt-1">Stuart Russell</p>
+      </div>
+      </div>
+      
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/Introduction to the Theory of Computation.jpg" alt="The Alchemist">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">Introduction to the Theory of Computation</h2>
+          <p class="text-gray-600 text-sm mt-1">Michael Sipser</p>
+      </div>
+      </div>
+        
+      <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="../src/The Pragmatic Programmer.jpg" alt="Remarkably Bright Creatures">
+        <div class="p-4">
+          <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded-full">Science</span>
+          <h2 class="text-l font-bold mt-3">The Pragmatic Programmer</h2>
+          <p class="text-gray-600 text-sm mt-1">Andy Hunt</p>
+      </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto mt-8">
+      <section class="container mx-auto mt-8">
+        <h3 class="text-xl font-semibold mb-4 underline decoration-bookcircle-red"><a href="#">Browse by Genre ›</a></h3>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Fiction</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Non-Fiction</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Mystery</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Fantasy</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Science Fiction</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Romance</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Historical Fiction</a></div>
+          <div class="bg-amber-100 py-2 px-4 rounded-lg shadow-md text-center italic"><a href="#">Biography</a></div>
+        </div>
+        </section>
+
+      <section class="container mx-auto mt-8">
+        <h3 class="text-xl font-semibold mb-4 underline decoration-bookcircle-red"><a href="#">Our articles ›</a></h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Card 1 -->
+          <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center w-full mx-auto">
+            <a href="artikel.html">
+              <h3 class="font-semibold text-base">Most Anticipated Books of 2025</h3>
+            </a>
+            <p class="text-gray-600 mt-2 text-sm">What books are you most excited about for next year?</p>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center w-full mx-auto">
+            <h3 class="font-semibold text-base">Best Female Characters in 2024</h3>
+            <p class="text-gray-600 mt-2 text-Best Female Characters in 2024</h3>
+            <p class="text-gray-600 mt-2 text-sm">From heroes to anti-heroes, share your favorite female characters this year.</p>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center w-full mx-auto">
+            <h3 class="font-semibold text-base">Unexpected Plot Twists</h3>
+            <p class="text-gray-600 mt-2 text-sm">Which 2024 book surprised you the most? Let's discuss the biggest twists.</p>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center w-full mx-auto">
+            <h3 class="font-semibold text-base">Fantasy vs. Mystery: Which Genre Won 2024?</h3>
+            <p class="text-gray-600 mt-2 text-sm">Debate the best genres of the year with fellow readers.</p>
+          </div>
+          
+        </div>
+      </section>
+
+  <footer class="bg-gray-50 py-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-600">
+      <!-- Company Section -->
+      <div>
+        <h5 class="font-bold mb-3">COMPANY</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">About us</a></li>
+          <li><a href="#" class="hover:text-gray-800">Careers</a></li>
+          <li><a href="#" class="hover:text-gray-800">Terms</a></li>
+          <li><a href="#" class="hover:text-gray-800">Privacy</a></li>
+          <li><a href="#" class="hover:text-gray-800">Interest Based Ads</a></li>
+          <li><a href="#" class="hover:text-gray-800">Ad Preferences</a></li>
+          <li><a href="#" class="hover:text-gray-800">Help</a></li>
+        </ul>
+      </div>
+  
+      <!-- Work With Us Section -->
+      <div>
+        <h5 class="font-bold mb-3">WORK WITH US</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">Authors</a></li>
+          <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
+          <li><a href="#" class="hover:text-gray-800">Authors & Ads Blog</a></li>
+          <li><a href="#" class="hover:text-gray-800">API</a></li>
+        </ul>
+      </div>
+  
+      <!-- Connect Section -->
+      <div>
+        <h5 class="font-bold mb-3">CONNECT</h5>
+        <div class="flex space-x-3">
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_facebook-ea4ab848f8e86c5f5c98311bc9495a1b.svg">
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_twitter-126b3ee80481a763f7fccb06ca03053c.svg"/>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_instagram-d59e3887020f12bcdb12e6c539579d85.svg"/>          
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_linkedin-5b820f4703eff965672594ef4d10e33c.svg"/>          
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom Section -->
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 mt-6">
+      <div class="flex space-x-4">
+        <a href="#"><img src="../src/app-store-logo.png" alt="App Store" class="w-24 h-8"></a>
+        <a href="#"><img src="../src/play-store-logo.png" alt="Google Play" class="w-24 h-8"></a>
+      </div>
+      <div class="mt-4 md:mt-0">&copy; 2024 BookCirle.com, Inc.</div>
+      <div class="mt-4 md:mt-0">
+        <a href="#" class="hover:text-gray-800">Mobile version</a>
+      </div>
+    </div>
+  </footer>
+  
+
+</main>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Recommendation Page</title>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <header class="bg-bookcircle-red text-white p-4">
+    <div class=" mx-2 flex items-center">
+      <div class="flex items-center ml-0">
+        <a href="homepage.html">
+        <img src="../src/Logo.png" alt="Logo" class="h-8 w-auto"></a>
+      </div>
+  
+      <nav class="hidden md:block ml-6">
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Blog</a></li>
+          <li><a href="#" class="hover:text-gray-300" style="font-family: 'Georgia', serif;">Discussion</a></li>
+          <li><a href="#" class="hover:text-gray-300 text-yellow-300" style="font-family: 'Georgia', serif;">Find a Book ▼</a></li>
+        </ul>
+      </nav>
+      <div class="flex-grow"></div>
+  
+      <div class="flex items-center mr-4">
+        <div class="w-72 h-10 bg-[#c14a3a] rounded-lg flex items-center justify-between px-4">
+          <input type="text" placeholder="search" class="text-white bg-transparent border-none outline-none w-full h-full placeholder-opacity-60 text-sm" style="font-family: sans-serif">
+        </div>
+      </div>
+      
+      <div class="flex items-center space-x-4 mx-6">
+        <img src="../src/profil.jpg" alt="User profile" class="w-10 h-10 rounded-full">
+        <button id="hamburger-button" class="text-white focus:outline-none ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+<div class="relative mb-8">
+    <div class="relative h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585779034823-7e9ac8faec70?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 flex justify-end items-center p-10">
+            <div style="background-image: url('../src/Cover Buku/Vector.png'); width: 427px; height: 251px; background-size: cover; padding: 6px; border-radius: 10px; display: flex; justify-content: center; align-items: center;">
+                <h1 style="text-align: center; font-size: 24px; font-weight: bold; color: #000000;">Find Good Books to Read</h1>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="container mx-auto mt-8">
+  <h3 class="text-xl font-semibold mb-4">Recommendation based on your latest read ›</h3>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the stranger.jpg" alt="The Stranger">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">The Stranger</h2>
+        <p class="text-gray-600 text-sm mt-1">Albert Camus</p>
+    </div>
+    </div>
+  
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/Sorcerer stone.jpg" alt="Harry Potter">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">Harry Potter and the Sorcerer's Stone</h2>
+        <p class="text-gray-600 text-sm mt-1">J.K. Rowling</p>
+    </div>
+    </div>
+    
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/No longer human.jpg" alt="No longer human">
+      <div class="p-4">
+          <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">No longer Human</h2>
+        <p class="text-gray-600 text-sm mt-1">Osamu Dazai</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the richest man in babylon.jpg" alt="The Richest Man in Babylon">
+      <div class="p-4">
+        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+        <h2 class="text-l font-bold mt-3">The Richest Man in Babylon</h2>
+        <p class="text-gray-600 text-sm mt-1">George S. Clason</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the alchemist.jpeg" alt="The Alchemist">
+      <div class="p-4">
+        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+        <h2 class="text-l font-bold mt-3">The Alchemist</h2>
+        <p class="text-gray-600 text-sm mt-1">Paulo Coelho</p>
+    </div>
+    </div>
+      
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/Remarkably Bright Creatures.jpg" alt="Remarkably Bright Creatures">
+      <div class="p-4">
+        <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded-full">Fiction</span>
+        <h2 class="text-l font-bold mt-3">Remarkably Bright Creatures</h2>
+        <p class="text-gray-600 text-sm mt-1">Shelby Van Pelt</p>
+    </div>
+    </div>
+</section>
+  
+
+<section class="container mx-auto mt-8">
+  <h3 class="text-xl font-semibold mb-4">Currently Trending ›</h3>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the stranger.jpg" alt="The Stranger">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">The Stranger</h2>
+        <p class="text-gray-600 text-sm mt-1">Albert Camus</p>
+    </div>
+    </div>
+  
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/Sorcerer stone.jpg" alt="Harry Potter">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">Harry Potter and the Sorcerer's Stone</h2>
+        <p class="text-gray-600 text-sm mt-1">J.K. Rowling</p>
+    </div>
+    </div>
+    
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/psychology_of_money.jpg" alt="The Psychology of Money">
+      <div class="p-4">
+        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+        <h2 class="text-l font-bold mt-3">The Psychology of Money</h2>
+        <p class="text-gray-600 text-sm mt-1">Morgan Housel</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the richest man in babylon.jpg" alt="The Richest Man in Babylon">
+      <div class="p-4">
+        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+        <h2 class="text-l font-bold mt-3">The Richest Man in Babylon</h2>
+        <p class="text-gray-600 text-sm mt-1">George S. Clason</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the alchemist.jpeg" alt="The Alchemist">
+      <div class="p-4">
+        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Finance</span>
+        <h2 class="text-l font-bold mt-3">The Alchemist</h2>
+        <p class="text-gray-600 text-sm mt-1">Paulo Coelho</p>
+    </div>
+    </div>
+      
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/Remarkably Bright Creatures.jpg" alt="Remarkably Bright Creatures">
+      <div class="p-4">
+        <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded-full">Fiction</span>
+        <h2 class="text-l font-bold mt-3">Remarkably Bright Creatures</h2>
+        <p class="text-gray-600 text-sm mt-1">Shelby Van Pelt</p>
+    </div>
+    </div>
+</section>
+
+<section class="container mx-auto mt-8">
+  <h3 class="text-xl font-semibold mb-4">Based on your favorite genre, absurdism ›</h3>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/myth of sisyphus.jpeg" alt="myth of sisyphus">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">Myth of Sisyphus</h2>
+        <p class="text-gray-600 text-sm mt-1">Albert Camus</p>
+    </div>
+    </div>
+  
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the trial.jpg" alt="The trial">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">The Trial</h2>
+        <p class="text-gray-600 text-sm mt-1">Franz Kafka</p>
+    </div>
+    </div>
+    
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/the alchemist.jpeg" alt="The Alchemist">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">The Alchemist</h2>
+        <p class="text-gray-600 text-sm mt-1">Paulo Coelho</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/Cat's_Cradle_(1st_ed._cover)_-_Vonnegut.jpg" alt="cat's cradle">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">cat's cradle</h2>
+        <p class="text-gray-600 text-sm mt-1">George S. Clason</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/1984.jpg" alt="1984">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">Nineteen Eighty-Four</h2>
+        <p class="text-gray-600 text-sm mt-1">George Orwell</p>
+    </div>
+    </div>
+      
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/animal farm.jpg" alt="Animal Farm">
+      <div class="p-4">
+        <span class="bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Classic</span>
+        <h2 class="text-l font-bold mt-3">Animal Farm</h2>
+        <p class="text-gray-600 text-sm mt-1">George Orwell</p>
+    </div>
+    </div>
+</section>
+
+<section class="container mx-auto mt-8">
+  <h3 class="text-xl font-semibold mb-4">Highest Rating Book ›</h3>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/words of radiance.jpg" alt="Words of radiance">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">Words of Radiance</h2>
+        <p class="text-gray-600 text-sm mt-1">Brandon Sanderson</p>
+    </div>
+    </div>
+  
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/deathly hallows.jpg" alt="Deathly Hallows">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">Harry Potter and the Deathly Hallows</h2>
+        <p class="text-gray-600 text-sm mt-1">J.K. Rowling</p>
+    </div>
+    </div>
+    
+
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/crooked kingdom.jpg" alt="Crooked Kingdom">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">Crooked Kingdom</h2>
+        <p class="text-gray-600 text-sm mt-1">Leigh Bardugo</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/return of the king.jpg" alt="Return of the king">
+      <div class="p-4">
+        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Fantasy</span>
+        <h2 class="text-l font-bold mt-3">The Return of the King</h2>
+        <p class="text-gray-600 text-sm mt-1">J.R.R. Tolkien</p>
+    </div>
+    </div>
+    
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/house of hades.jpg" alt="House of hades">
+      <div class="p-4">
+        <span class="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Greek Mythology</span>
+        <h2 class="text-l font-bold mt-3">The House Of Hades</h2>
+        <p class="text-gray-600 text-sm mt-1">Rick Riordan</p>
+    </div>
+    </div>
+      
+    <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+      <img class="w-full h-48 object-cover" src="../src/Cover Buku/nightingale.jpg" alt="Nightingale">
+      <div class="p-4">
+        <span class="bg-pink-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Romance</span>
+        <h2 class="text-l font-bold mt-3">The Nightingale</h2>
+        <p class="text-gray-600 text-sm mt-1">Kristin Hannah</p>
+    </div>
+    </div>
+</section>
+
+  <footer class="bg-gray-50 py-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-600">
+      <!-- Company Section -->
+      <div>
+        <h5 class="font-bold mb-3">COMPANY</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">About us</a></li>
+          <li><a href="#" class="hover:text-gray-800">Careers</a></li>
+          <li><a href="#" class="hover:text-gray-800">Terms</a></li>
+          <li><a href="#" class="hover:text-gray-800">Privacy</a></li>
+          <li><a href="#" class="hover:text-gray-800">Interest Based Ads</a></li>
+          <li><a href="#" class="hover:text-gray-800">Ad Preferences</a></li>
+          <li><a href="#" class="hover:text-gray-800">Help</a></li>
+        </ul>
+      </div>
+  
+      <!-- Work With Us Section -->
+      <div>
+        <h5 class="font-bold mb-3">WORK WITH US</h5>
+        <ul>
+          <li><a href="#" class="hover:text-gray-800">Authors</a></li>
+          <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
+          <li><a href="#" class="hover:text-gray-800">Authors & Ads Blog</a></li>
+          <li><a href="#" class="hover:text-gray-800">API</a></li>
+        </ul>
+      </div>
+  
+      <!-- Connect Section -->
+      <div>
+        <h5 class="font-bold mb-3">CONNECT</h5>
+        <div class="flex space-x-3">
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_facebook-ea4ab848f8e86c5f5c98311bc9495a1b.svg">
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_twitter-126b3ee80481a763f7fccb06ca03053c.svg"/>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_instagram-d59e3887020f12bcdb12e6c539579d85.svg"/>          
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-800">
+            <img src="https://s.gr-assets.com/assets/site_footer/footer_linkedin-5b820f4703eff965672594ef4d10e33c.svg"/>          
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom Section -->
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 mt-6">
+      <div class="flex space-x-4">
+        <a href="#"><img src="../src/Cover Buku/App_Store_(iOS).svg.png" alt="App Store" class="w-24"></a>
+        <a href="#"><img src="../src/Cover Buku/google-play-logo-C0F8C12322-seeklogo.com.png" alt="Google Play" class="w-24"></a>
+      </div>
+      <div class="mt-4 md:mt-0">&copy; 2024 BookCirle.com, Inc.</div>
+      <div class="mt-4 md:mt-0">
+        <a href="#" class="hover:text-gray-800">Mobile version</a>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

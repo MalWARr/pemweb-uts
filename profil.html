@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodreads Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            color: #777;
+        }
+        .main-content {
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+        }
+        .book-section {
+            margin-bottom: 40px;
+        }
+        .book-section h2 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #FF6F00;
+        }
+        .book-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .book {
+            width: 150px;
+            text-align: center;
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 9px;
+            width: 100;
+        }
+        .book-title {
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .book-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .progress {
+            font-size: 12px;
+            color: #777;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            height: 4px;
+            border-radius: 4px;
+            margin-top: 5px;
+            position: relative;
+        }
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: #FF6F00;
+            border-radius: 4px;
+        }
+        :root {
+        --bookcircle-red: #8B3A3A;
+        --bookcircle-beige: #F5E6D3;
+        }
+
+        /* Penggunaan warna dalam elemen */
+    .element-red {
+        background-color: var(--bookcircle-red);
+        color: var(--bookcircle-beige);
+        }
+
+    .element-beige {
+        background-color: var(--bookcircle-beige);
+        color: var(--bookcircle-red);
+        }
+
+    /* Header */
+    .header {
+        background-color: #c14a3a; /* bookcircle-red */
+        color: white;
+        padding: 16px;
+    }
+    
+    /* Header container */
+    .header-container {
+        display: flex;
+        align-items: center;
+        margin: 0 8px;
+    }
+    
+    /* Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+    }
+    
+    .logo-img {
+        height: 32px;
+        width: auto;
+    }
+    
+    /* Navigation */
+    .navigation {
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .navigation {
+        display: block;
+        }
+    }
+    
+    .nav-list {
+        display: flex;
+        list-style-type: none;
+        gap: 25px; /* Reduced gap between navigation items */
+    }
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-family: 'Georgia', serif;
+    }
+    
+    .nav-link:hover {
+        color: #b3b3b3; /* Gray hover color */
+    }
+    
+    .nav-link.active {
+        color: #ffd700; /* Yellow */
+    }
+    
+    /* Spacer */
+    .spacer {
+        flex-grow: 1;
+    }
+    
+    /* Search bar */
+    .search-container {
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
+    }
+    
+    .search-bar {
+        width: 288px;
+        height: 40px;
+        background-color: #c14a3a;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+    
+    .search-input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        opacity: 0.6;
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+    
+    /* User profile */
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 0 24px;
+    }
+    
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    .hamburger-button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .hamburger-icon {
+        height: 24px;
+        width: 24px;
+    }
+
+    :root {
+        --bookcircle-red: #8B3A3A;
+        --bookcircle-beige: #F5E6D3;
+        }
+
+        /* Penggunaan warna dalam elemen */
+    .element-red {
+        background-color: var(--bookcircle-red);
+        color: var(--bookcircle-beige);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header element-red">
+        <div class="header-container">
+          <!-- Logo (Pojok Kiri) -->
+          <div class="logo">
+            <a href="homepage.html">
+                <img src="../src/Logo.png" alt="Logo" class="logo-img">
+            </a>
+          </div>
+      
+          <!-- Navigation Menu -->
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li><a href="#" class="nav-link">Blog</a></li>
+              <li><a href="#" class="nav-link">Discussion</a></li>
+              <li><a href="#" class="nav-link active">Find a Book ▼</a></li>
+            </ul>
+          </nav>
+      
+          <!-- Spacer to push remaining items to the right -->
+          <div class="spacer"></div>
+      
+          <!-- Search Bar -->
+          <div class="search-container">
+            <div class="search-bar">
+              <input type="text" placeholder="search" class="search-input">
+            </div>
+          </div>
+          
+          <!-- User Profile and Hamburger Button -->
+          <div class="user-profile">
+            <img src="../src/profil.jpg" alt="User profile" class="profile-img">
+            <button id="hamburger-button" class="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="hamburger-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="sidebar">
+                <img src="../src/profil.jpg" alt="Laura Allison" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px; margin-left: 60px;">
+                <h3>SAHL</h3>
+                <p>@SAHL</p>
+                <p>PRABUMULIH,INDONESIA</p>
+                <P>muhammadsahl17@gmail.com</P>
+                <h3>Recommendations</h3>
+                <ul>
+                    <li>My Books</li>
+                    <li>Privacy dan security</li>
+                    <li>Community</li>
+                    <li>Currently Reading (6)</li>
+                    <li>Read (123)</li>
+                    <li>Want to Read (35)</li>
+                    <li>Friends</li>
+                    <li>New Releases</li>
+                    <li>Settings</li>
+                    <li>Log out</li>
+                </ul>
+            </div>
+
+            <div class="main-content">
+                <div class="book-section">
+                    <h2>Want to Read</h2>
+                    <div class="book-grid">
+                        <div class="book">
+                            <img src="../src/download (1).webp" alt="TAGILE TRANSFORMATION" style="width: 150px; height: 225px ;"> 
+                            <div class="book-title">AGILE TRANSFORMATION</div>
+                            <div class="book-author">MICHAEL K.SPAYD</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/download (6).webp" alt="ASK YOUR DEVELOPER" style="width: 150px; height: 225px ;">
+                            <div class="book-title">ASK YOUR DEVELOPER</div>
+                            <div class="book-author">JEFF LAWSON</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/download (3).webp" alt="USER FRIENDLY" style="width: 150px; height: 225px ;">
+                            <div class="book-title">USER FRIENDLY</div>
+                            <div class="book-author">ROBERT FABRICANT</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/download (4).webp" alt="REALITY CHECK" style="width: 150px; height: 225px ;">
+                            <div class="book-title">REALITY CHECK</div>
+                            <div class="book-author">JEREMY DALTON</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/3735293._SX300_.jpg" alt="CLEAN CODE" style="width: 150px; height: 225px ;">
+                            <div class="book-title">CLEAN CODE</div>
+                            <div class="book-author">ROBERT C. MARTIN</div>
+                    </div>
+                </div>
+
+                <div class="book-section">
+                    <h2>Finished reading</h2>
+                    <div class="book-grid">
+                        <div class="book">
+                            <img src="../src/download (7).webp" alt="MY ROBOTS GETS ME" style="width: 150px; height: 225px ;">
+                            <div class="book-title">MY ROBOT GETS ME</div>
+                            <div class="book-author">CARLA DIANA</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/download.jpeg" alt="WHAT THE EXPECT WHEN YOU'RE EXPECTING ROBOT" style="width: 150px; height: 225px ;">
+                            <div class="book-title">WHAT THE EXPECT WHEN YOU'RE EXPECTING ROBOTS</div>
+                            <div class="book-author">LAURA MAJORt</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/220px-Rich_Dad_Poor_Dad-184x300.webp" alt="RICH DAD POOR DAD" style="width: 150px; height: 225px ;" >
+                            <div class="book-title">RICH DAD POOR DAD</div>
+                            <div class="book-author">ROBERT T.KOYASAKI</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/5l.jpg" alt="5 LEVELS OF LEADERSHIP" style="width: 150px; height: 225px ;">
+                            <div class="book-title">5 LEVELS OF LEADERSHIP</div>
+                            <div class="book-author">JOHN C.MAXWELL</div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/4099._SX300_.jpg" alt="THE PROGMATIC PROGRAMER" style="width: 150px; height: 225px ;">
+                            <div class="book-title">THE PROGMATIC PROGRAMER</div>
+                            <div class="book-author">DAVID THOMAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-section">
+                    <h2>CURRENTLY READING</h2>
+                    <div class="book-grid">
+                        <div class="book">
+                            <img src="../src/content.jpeg" alt="THE GREAT SHIFTING" style="width: 150px; height: 225px ;">
+                            <div class="book-title">THE GREAT SHIFTING</div>
+                            <div class="book-author">REINALD KASALI</div>
+                            <div class="progress">Progress</div>
+                            <div class="progress-bar">
+                                <span style="width: 40%;"></span>
+                            </div>
+                        </div>
+                        <div class="book">
+                            <img src="../src/buku kelompok.jpg" alt="SELF THAUGHT PROGRAMER" style="width: 150px; height: 225px ;">
+                            <div class="book-title">THE SELF THAUGHT PROGRAMER</div>
+                            <div class="book-author">NICHOLAS CARR</div>
+                            <div class="progress">Progress</div>
+                            <div class="progress-bar">
+                                <span style="width: 80%;"></span>
+
